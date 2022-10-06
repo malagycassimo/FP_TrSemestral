@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pagamentos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cfa486e3-3510-43d2-984e-0a13f0b7789b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.background.image" value="C:\Users\Prashna\Downloads\Malagy95\Pictures\Icones\JavaP\-_Home-House--128_2_11zon.png"/>
+	<property name="ireport.background.image.properties" value="false,true,0.25,0,0,0,0,0,0"/>
+	<queryString>
+		<![CDATA[select
+E.nome, nuit,Localização,URL,Email,Cidade,Telefone,Telefone1,Logo,
+P.TipoPagamento,Aluno,MeioPagamento,Valor,DataPagamento
+from tbescola as E
+inner join tbpagamentos as P;]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nuit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Localização" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="URL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefone1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Logo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TipoPagamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Aluno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MeioPagamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Valor" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataPagamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="179" y="0" width="376" height="114" forecolor="#CCCCCC" uuid="1aabef17-b20e-450e-b767-bd0ca5482a2b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="357" y="3" width="61" height="20" isRemoveLineWhenBlank="true" uuid="b09772a9-bd39-4d6e-bfd5-8da3773ea22a"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="23" width="96" height="20" isRemoveLineWhenBlank="true" uuid="6c4dac63-2ee0-472a-8b9c-ee67ab4ce385"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nuit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="63" width="229" height="20" isRemoveLineWhenBlank="true" uuid="cf5f5b92-11ce-435e-b121-b064625a2014"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Localização}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="83" width="162" height="20" isRemoveLineWhenBlank="true" uuid="11c50f32-f90a-429c-b245-3ca7b1ff0d54"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="43" width="126" height="20" isRemoveLineWhenBlank="true" uuid="2f676aa4-2507-4ea3-9d63-80f9cac36f77"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="43" width="99" height="20" isRemoveLineWhenBlank="true" uuid="ae2a2d40-9535-4760-88e2-3a7cd14342f4"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefone1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="43" width="11" height="20" uuid="db06f60c-a18a-4db8-a1fb-6ab9b35f6cb5"/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="8" y="2" width="161" height="112" forecolor="#CCCCCC" uuid="8edcd9c8-d582-4a29-a6e5-21745b1f16f8"/>
+			</rectangle>
+			<image>
+				<reportElement x="20" y="10" width="130" height="107" uuid="5258be43-0273-4c27-b437-74ffb43c3496"/>
+				<imageExpression><![CDATA["C:\\Users\\Prashna\\Documents\\@IMAGEM\\logon.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="9" width="555" height="32" forecolor="#CCCCCC" backcolor="#F4F2F2" uuid="91f6f838-af06-4c03-a0e7-fef5cf314b5a"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="98" height="20" uuid="6e53dea8-d66a-4ca6-a927-b52dcbaffc2b"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do Aluno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="3" width="100" height="20" uuid="c4f8683d-f87c-486a-9adc-cc6b81926308"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TipoPagamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="3" width="100" height="20" uuid="9b58a4d3-38d4-49c8-bdef-ac4538ae17b2"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MeioPagamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="3" width="78" height="20" uuid="a6d19129-b19a-4439-9d6e-eb8e8c21eba4"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="29f41053-5f68-4daf-af40-cb3fd8ab6078"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DataPagamento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="98" height="20" uuid="4f6fafcb-59d2-4772-9a67-fa466d1abf35"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Aluno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="0" width="100" height="20" uuid="2e5ce50f-cf91-4099-a87d-1d9bfa21977b"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MeioPagamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="0" width="78" height="20" uuid="d9ef7e11-dd93-458c-aadb-3e746dd615f9"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="edef7c38-deff-45a2-a4bf-4a2c930db495"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DataPagamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="100" height="20" uuid="69fe060b-3cab-437c-89d0-0836c4b9459a"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TipoPagamento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="161" height="20" uuid="33dbbdb3-cdfe-4e20-ba8c-d64ec69858c5"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[@Moçambique - Maputo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="527" y="7" width="100" height="20" uuid="1d2a5099-431d-4025-8a2d-e8e2a6ad8d52"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="114" splitType="Stretch"/>
+	</summary>
+</jasperReport>

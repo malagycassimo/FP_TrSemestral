@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="funcionarios" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8357ddb5-6b42-4097-b2b0-2c2db2b21792">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select *, (select count(*) from tbfuncionario where nome like "%") as Nrf from tbfuncionario;]]>
+	</queryString>
+	<field name="Cod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NrBI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Genero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataNascimento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefone1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Naturalidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataInicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Foto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nrf" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="323" height="33" forecolor="#666666" uuid="a5dece53-5615-4119-8e3d-ad334dd72778"/>
+				<textElement>
+					<font fontName="Calibri" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Funcionarios  Cadastrados ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="45" width="555" height="1" forecolor="#CCCCCC" uuid="f772ce2b-c102-417c-ba8e-f7cf349aabfb"/>
+			</line>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="480" y="23" width="100" height="20" uuid="5cce5c4b-5a6e-43e7-a59f-0a346ead7baf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="4" width="555" height="28" forecolor="#CCCCCC" backcolor="#EEEDED" uuid="7eda4ee9-358e-494d-bb4a-63029d25806d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="11" y="12" width="100" height="20" uuid="23625b97-9346-4468-955b-8f180d1b9031"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="12" width="85" height="20" uuid="b3155430-0eda-42d8-95d6-a00c7b6f4606"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NrBI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="195" y="12" width="79" height="20" uuid="ba77b3bf-a8a0-40fa-bd50-ed97ee42eec5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DataNasc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="12" width="100" height="20" uuid="a5744387-83b1-4561-a280-fd2e9839a619"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="12" width="100" height="20" uuid="ef9cbb20-a54c-4612-ba2a-7fb909ddfd98"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cargo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="12" width="80" height="20" uuid="327154fe-6ed6-4e6e-a05d-02abb49d625b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Naturalidade]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="5" width="100" height="20" uuid="b699cec1-797c-472e-9106-d32d01bffe4a"/>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="5" width="85" height="20" uuid="dc4f5cd5-51fe-45f9-8e39-2dc4c5ed82d4"/>
+				<textFieldExpression><![CDATA[$F{NrBI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="196" y="5" width="79" height="20" uuid="76373dee-d34d-4cc2-abed-b8e4e94b5a8a"/>
+				<textFieldExpression><![CDATA[$F{DataNascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="5" width="100" height="20" uuid="38a3cbdf-6fc3-4d18-bb33-2e935609bdeb"/>
+				<textFieldExpression><![CDATA[$F{Telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="5" width="100" height="20" uuid="d18c00f6-5ac7-4798-a086-e68aaa79e126"/>
+				<textFieldExpression><![CDATA[$F{Cargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="5" width="80" height="20" uuid="5a7a4b79-2e0e-4c4c-9beb-8a67998d03e0"/>
+				<textFieldExpression><![CDATA[$F{Naturalidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="62" width="100" height="20" uuid="42c88d95-db0c-4f65-8dff-b934bda96e31"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nr de Funcionarios:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="62" width="100" height="20" uuid="54851c4f-7170-481b-b160-d2d93e8928d8"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nrf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="512" y="34" width="100" height="20" uuid="090e39f5-d5cf-4c5c-8ea3-e1d2179f8724"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="35" splitType="Stretch"/>
+	</summary>
+</jasperReport>

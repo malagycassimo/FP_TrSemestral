@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Alunos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa1e90bb-f1ae-4b73-9871-78d5e9d9f8b4">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[
+select *, (select count(*) from tbaluno where nome like "%") as Nra from tbaluno order by nome; ]]>
+	</queryString>
+	<field name="Cod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NrBI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Genero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataNascimento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefone1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Naturalidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CategCarta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataMatricula" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Turma" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Foto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Funcionario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nra" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="364" height="35" forecolor="#666666" uuid="215a5720-fe53-4188-90a9-5d2dc94bd067"/>
+				<textElement>
+					<font fontName="Calibri" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estudantes  Cadastrados ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="43" width="554" height="2" forecolor="#CCCCCC" uuid="ea4c5652-7b2d-4c8f-8b53-b1c4c28f9b82"/>
+			</line>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="483" y="25" width="100" height="20" uuid="7f1112e1-a2f5-4f68-ba16-4af338d2662a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="10" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="4" y="4" width="550" height="25" forecolor="#EDEBEB" backcolor="#F1F0F0" uuid="0acf44c4-6844-4f7a-a7c2-b3593ee387bc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="21" y="9" width="51" height="20" uuid="682bd1ef-455c-4c61-88f8-47e0a80c9a48"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="9" width="57" height="20" uuid="2c17f2aa-59cd-4429-a943-a1672075f032"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NrBI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="9" width="53" height="20" uuid="5ef8e1c0-2597-47f5-bba0-070059eae3ed"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DataNascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="9" width="62" height="20" uuid="664c3e6a-4004-45af-bb89-69f5b3cad1f0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="9" width="58" height="20" uuid="97667e97-d022-4446-a2c4-b22b1ed13fc5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="9" width="50" height="20" uuid="988d6e45-b19a-4b07-8aaf-583740d368ad"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Carta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="9" width="72" height="20" uuid="0bc69ed2-c88a-413c-91c4-eca9e8392324"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DataMatricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="9" width="42" height="20" uuid="9de1a591-d54f-433c-805f-b494ceef926c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turma]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="64" height="20" uuid="591ca85e-df92-45f2-9e87-2f3b2d0ce3b3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="68" height="20" uuid="9467f75b-eb93-48f9-9e2a-81fa800037fd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NrBI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="53" height="20" uuid="80b4387c-7047-4b7f-862a-d35a32af7ec3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DataNascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="0" width="82" height="20" uuid="0b064b45-3a2d-4e32-8d12-2df772b767d6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="0" width="74" height="20" uuid="a65ef673-c350-4e22-9361-37411e646c64"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Telefone1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="364" y="0" width="12" height="20" uuid="8006e4cf-8cae-474e-a7c6-856e9b403e40"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CategCarta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="112" height="20" uuid="cb0912cc-b0ea-4937-af50-4b64e27dec74"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DataMatricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="42" height="20" uuid="cdfeb845-7c0b-45db-ad2a-ac649e6ac74a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Turma}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="75" y="25" width="51" height="20" uuid="84de53f5-a199-4e35-aa1a-6441dab62fa1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="25" width="100" height="20" uuid="877244b2-abd3-42ff-89fe-51deb6361ea7"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nr de Alunos:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="74" splitType="Stretch">
+			<textField>
+				<reportElement x="517" y="54" width="100" height="20" uuid="f5cbea90-aebb-4df5-a994-d4ffc726ccc4"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

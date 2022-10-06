@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Turmas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="37f79feb-b0a7-4d4d-99c5-06ae820a3156">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select *, (select count(*) from tbturma where nome like "%") as Nrt from tbturma; ]]>
+	</queryString>
+	<field name="Cod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Horario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DataRegisto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NrAlunos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Professor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nrt" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="309" height="37" forecolor="#666666" uuid="ac16c2bc-c5e1-46b3-b238-3f17eada068f"/>
+				<textElement>
+					<font fontName="Calibri" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turmas Cadastradas]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="472" y="17" width="100" height="20" uuid="a5bd6b5a-1a89-48a9-8f41-4c5abc197403"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="34" width="554" height="3" forecolor="#CCCCCC" uuid="eafd243b-fdc2-48eb-b36b-713137dca713"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="10" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="-2" y="-1" width="553" height="24" forecolor="#FFFEFE" backcolor="#F5F1F1" uuid="02ddba7d-f4d1-4b5e-8ba6-eed639b72e59"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="16" y="2" width="100" height="20" uuid="47b77edb-4a6c-476e-9a64-6970a5eb051e"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="0" width="100" height="20" uuid="0c87ae2e-4bd9-4eab-b3b8-cc8bb00fd6f9"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Horario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="2" width="100" height="20" uuid="49ca7959-1d66-4e90-b119-1825301de64b"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[DataRegisto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="2" width="100" height="20" uuid="c6de6f58-4fb9-46b9-8b97-5535a1ffb0fc"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[NrAlunos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20" uuid="301a2b50-dfdb-49d9-9365-67176303a9bf"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Professor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="16" y="5" width="100" height="20" uuid="f7855143-a2bd-4e96-9246-5b3b224687b4"/>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="5" width="69" height="20" uuid="613b28f2-6284-4b57-8213-5d64ff33bd7d"/>
+				<textFieldExpression><![CDATA[$F{Horario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="5" width="100" height="20" uuid="23ffe5e2-f849-4466-8886-cbf1fbc4da6a"/>
+				<textFieldExpression><![CDATA[$F{DataRegisto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="5" width="80" height="20" uuid="98fb7f0b-139e-423e-985c-1a5a0357cdc7"/>
+				<textFieldExpression><![CDATA[$F{NrAlunos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="5" width="100" height="20" uuid="9022df8b-2daf-4126-a739-8c8e866d3b2b"/>
+				<textFieldExpression><![CDATA[$F{Professor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="25" width="81" height="20" uuid="f9c68651-6985-4877-b4a1-79c4d6ef76bd"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nr de Turmas:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="82" y="25" width="51" height="20" uuid="ae680542-ad48-4ebf-b075-a80f18796658"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nrt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="516" y="34" width="100" height="20" uuid="b328ef52-506d-421a-bc89-758c73f782a7"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
